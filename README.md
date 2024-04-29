@@ -57,7 +57,17 @@ After training, we evaluate the model on the validation dataset to assess its lo
 **Results:**
 
 ***Base Model*** -
- 
+<img width="1140" alt="Screenshot 2024-04-29 at 6 28 35 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/ba031ebe-9e48-4c9c-9733-dd0ebc242fcf">
+The loss decreases and accuracy increases fairly consistantly throughout the 15 epochs
+The fluctuation in validation accuracy, especially in the second half of training indicates an issue with overfitting where the model is having trouble generalizing to unseen data
+<img width="544" alt="Screenshot 2024-04-29 at 6 27 44 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/fb46da53-1261-4cf8-9e12-4103dae14638">
+
+ Post training evaluation -
+ Test loss: 1.8880281448364258
+ Test accuracy: 0.4881422817707062
+
+ The confusion matrix indicates that the base model has trouble categorizing paper, often mistaking it for metal as well as trouble categorizing trash as metal. 
+<img width="779" alt="Screenshot 2024-04-29 at 6 37 32 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/dd1c253b-36fa-4804-bd4a-95601ba1c711">
 
 ***Transfer Learning*** - 
 <img width="1225" alt="Screenshot 2024-04-26 at 9 32 13 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/1094faf1-38b3-44dc-9da4-03c4af0a441d">
