@@ -32,7 +32,11 @@ Non Augmented Dataset:
 
 Augmented Dataset: 
 
-[insert preview of augmented image dataset]
+<img width="687" alt="Screenshot 2024-04-29 at 7 32 41 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/8e8a5b3d-9e0f-42c7-aae6-06a3ea7f2f0a">
+
+<img width="570" alt="Screenshot 2024-04-29 at 5 34 29 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/f0db4975-f9a3-468a-8a78-3ad494cfecf3">
+
+
 
 **Methods:**
 
