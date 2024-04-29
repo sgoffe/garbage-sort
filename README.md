@@ -21,7 +21,7 @@ We got our data from a Github called “Trashnet” (https://github.com/garythun
 <img width="570" alt="Screenshot 2024-04-29 at 5 34 29 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/049c8f93-c6e3-417a-b299-54abac1512cb">
 
 
-As shown in the class dsitribution, there are a lot less photos of trash compared to the other classes. We attempted to fix this problem by reaching out to companies to get more photos, but unfortunately, none of them replied. To solve this problem, we decided to do data augmentation on the 137 data points of trash we already have. By amalgamating the original photos with the new augmented ones, we are able to now have X photos of trash
+As shown in the class dsitribution, there are a lot less photos of trash compared to the other classes. We attempted to fix this problem by reaching out to companies to get more photos, but unfortunately, none of them replied. To solve this problem, we decided to do data augmentation on the 137 data points of trash we already have. 
 
 
 Non Augmented Dataset:
@@ -48,11 +48,11 @@ dropout layer with a dropout rate of 0.25 to prevent overfitting. The second con
 
 ***Transfer Learning  model*** - 
 Transfer learning is a machine learning technique where a pre-trained model developed for a specific task is reused as the starting point for a new model on a related task. We used the DenseNet121 architecture, a convolutional neural network, for this.
-We start by loading the DenseNet121 model pre-trained on the ImageNet dataset. We exclude the fully connected layers (`include_top=False`) since we're using the model as a feature extractor. To retain the pre-trained weights and prevent them from being updated during training, we freeze all layers in the base model. Next, we add custom layers on top of the base model to adapt it to our specific task. We use Global Average Pooling to reduce computational complexity and combat overfitting. Then, we add a fully connected layer with 512 units and ReLU activation, followed by Batch Normalization to stabilize training, and Dropout to regularize the network and prevent overfitting. The final layer consists of a Dense layer with softmax activation, which outputs probabilities for each of the six classes. 
+We start by loading the DenseNet121 model pre-trained on the ImageNet dataset. We exclude the fully connected layers (include_top=False) since we're using the model as a feature extractor. To retain the pre-trained weights and prevent them from being updated during training, we freeze all layers in the base model. Next, we add custom layers on top of the base model to adapt it to our specific task. We use Global Average Pooling to reduce computational complexity and combat overfitting. Then, we add a fully connected layer with 512 units and ReLU activation, followed by Batch Normalization to stabilize training, and Dropout to regularize the network and prevent overfitting. The final layer consists of a Dense layer with softmax activation, which outputs probabilities for each of the six classes. 
 
-In both cases, the model is compiled using the Adam optimizer and sparse categorical cross-entropy loss function. During training, we use an ImageDataGenerator to preprocess the input images and in some cases perform data augmentation. We split the data into training and validation sets and specify the target image size and batch size. We train the model for 15 epochs, monitoring both training and validation accuracy to evaluate its performance. However, because the transfer learning takes a while and our computer shuts off often, the highest we made it for transfer learning was 13 out of 15 epochs with a of loss: 0.3433, accuracy: 0.8883, val_loss: 0.8454, and val_accuracy: 0.7237. 
+In both cases, the model is compiled using the Adam optimizer and sparse categorical cross-entropy loss function. During training, we use an ImageDataGenerator to preprocess the input images and in some cases perform data augmentation. We split the data into training and validation sets and specify the target image size and batch size. We train the model for 15 epochs, monitoring both training and validation accuracy to evaluate its performance.  
 
-After training, we evaluate the model on the validation dataset to assess its loss and accuracy. Finally, we visualize the training history by plotting the training and validation loss over epochs using Matplotlib. This allows us to analyze the model's learning progress and identify any signs of overfitting or underfitting. However, because the model stops and the computer times out at 13 out of 15 epochs, we have had to manually put the training loss and validation loss in a list and then graph it from there. And because the computer times out, we can’t run the confusion matrix on the transfer learning model.
+After training, we evaluate the model on the validation dataset to assess its loss and accuracy. Finally, we visualize the training history by plotting the training and validation loss over epochs using Matplotlib. This allows us to analyze the model's learning progress and identify any signs of overfitting or underfitting. 
 
 ***Base Model with Data Augmentation*** -
 
@@ -74,11 +74,23 @@ The fluctuation in validation accuracy, especially in the second half of trainin
 <img width="779" alt="Screenshot 2024-04-29 at 6 37 32 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/dd1c253b-36fa-4804-bd4a-95601ba1c711">
 
 ***Transfer Learning*** - 
-<img width="1225" alt="Screenshot 2024-04-26 at 9 32 13 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/1094faf1-38b3-44dc-9da4-03c4af0a441d">
-With Transfer Learning, we only managed to reach 13 out of 15 epochs. The last recorded data had a loss: 0.3433, accuracy: 0.8883, val_loss: 0.8454, and val_accuracy: 0.7237.
-The Training Loss and Validation Loss is graphed below.
-<img width="784" alt="Screenshot 2024-04-29 at 5 03 12 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/47cf9aee-e822-4dd4-98af-86a4c909f6ff">
 
+<img width="1229" alt="Screenshot 2024-04-29 at 10 48 42 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/5c55169d-5f2b-4a66-a8c9-10c661d29210">
+
+By the 15th epoch, we have a loss: 0.3457, accuracy: 0.8819, val_loss: 0.9096, and val_accuracy: 0.6978. The discrepancy between the accuracy (88%) and the validation accuracy (69%) shows that the model is overfitting. To fix overfitting, a couple strategies we could use is adding dropout layers, using data augmentation, using fewer layers or parameters, and/or increasing regularization. However, the transfer learning does take a while to run so there wasn't time to implement these strategies.
+
+
+The Training Loss and Validation Loss is graphed here:
+
+<img width="686" alt="Screenshot 2024-04-29 at 10 48 57 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/3df08747-8db6-47f9-b16e-6315fa6bac32">
+
+We can see that it doesn't really converge and there's lots of fluctuations. This also shows overfitting.
+
+The Confusion Matrix is below:
+
+<img width="724" alt="Screenshot 2024-04-29 at 10 53 22 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/4b2b89f9-e851-4bdd-a1c0-fd31e92244fc">
+
+We can see that it often confuses paper with other things, especially plastic.
 
 
 ***Base Model with Data Augmentation*** -
@@ -89,7 +101,8 @@ The Training Loss and Validation Loss is graphed below.
 
 **Issues We Ran Into**
 - We only had 137 photos of trash, while other categories of recyclables are around 500 photos. To fix this discrepancy, we used data augmentation.
-- Transfer Learning took a while to run and the computer would often shut down. The furthest we got was 13 out of 15 epochs as mentioned above. This issue was unable to be fixed since it was a hardware issue with our computer; sometimes we wouldn't have enough ram and sometimes our computer would just shut down. We did not include transfer learning in our final presentation as we ran into these issues and the accuracy was not as good as the other models either. -  
+- Transfer Learning took a while to run and the computer would often shut down. We managed to run all epochs, but there wasn't enough time to go back and implement strategies to stop overfitting.
+  
 
 
 
