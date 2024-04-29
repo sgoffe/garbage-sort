@@ -24,12 +24,15 @@ We got our data from a Github called “Trashnet” (https://github.com/garythun
 As shown in the class dsitribution, there are a lot less photos of trash compared to the other classes. We attempted to fix this problem by reaching out to companies to get more photos, but unfortunately, none of them replied. To solve this problem, we decided to do data augmentation on the 137 data points of trash we already have. By amalgamating the original photos with the new augmented ones, we are able to now have X photos of trash
 
 
-Non Augmented Photos:
+Non Augmented Dataset:
 
 
 <img width="687" alt="Screenshot 2024-04-29 at 5 36 26 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/efc52267-a392-4d48-880f-ddd68d044ac0">
 
 
+Augmented Dataset: 
+
+[insert preview of augmented image dataset]
 
 **Methods:**
 
