@@ -81,13 +81,14 @@ The Training Loss and Validation Loss is graphed below.
 
 ***Transfer Learning and Data Augmentation*** -
 
+**Conclusion**
 
 **Issues We Ran Into**
 - We only had 137 photos of trash, while other categories of recyclables are around 500 photos. To fix this discrepancy, we used data augmentation.
 - Transfer Learning took a while to run and the computer would often shut down. The furthest we got was 13 out of 15 epochs as mentioned above. This issue was unable to be fixed since it was a hardware issue with our computer; sometimes we wouldn't have enough ram and sometimes our computer would just shut down. We did not include transfer learning in our final presentation as we ran into these issues and the accuracy was not as good as the other models either. -  
 
 
-**Conclusion**
+
 
 
 
