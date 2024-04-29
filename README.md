@@ -17,6 +17,8 @@ Faced with the issue of access to only 2527 data points between six classes we r
 
 We got our data from a Github called “Trashnet” (https://github.com/garythung/trashnet/tree/master). These images were personally photographed by Stanford University students themselves. The data consists of 6 types of trash and recyclables, which we made into classes. These classes are: paper, plastic, trash, cardboard, metal, and glass. There are 594 photos labeled paper, 482 plastic, 137 trash, 403 cardboard, 410 metal, and 501 glass.
 There are a lot less photos of trash compared to the other classes. We attempted to fix this problem by reaching out to companies to get more photos, but unfortunately, none of them replied. To solve this problem, we decided to do data augmentation on the 137 data points of trash we already have. By amalgamating the original photos with the new augmented ones, we are able to now have X photos of trash
+<img width="570" alt="Screenshot 2024-04-29 at 5 34 29 PM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/049c8f93-c6e3-417a-b299-54abac1512cb">
+
 
 **Methods:**
 
