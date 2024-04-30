@@ -124,10 +124,12 @@ Out of all these models, we see that the transfer learning and data augmentation
 
 **Issues We Ran Into**
 - We only had 137 photos of trash, while other categories of recyclables are around 500 photos. To fix this discrepancy, we used data augmentation.
-- Some diversity in the background of the images and more data in general would be the first step moving forward
-  
-
-
+- No diversity in the background of the images and minimal data in general
+**Moving forward**
+- More data would be our first step
+- Implementing other overfitting prevention tactics - early stopping
+- Unfreeing more layers in transfer learning
+- More specific categories 
 
 
 
