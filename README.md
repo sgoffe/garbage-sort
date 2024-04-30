@@ -56,6 +56,8 @@ After training, we evaluate the model on the validation dataset to assess its lo
 
 ***Base Model with Data Augmentation*** -
 
+Data augmentation is the process by which a dataset is expanded by procedurally altering its files. For our images, we applied horizontal flips, vertical flips, brightness shifts and a slight zoom (between 0 and 20%). We avoided transformations such as shears and rotations because they create empty pixels that need to be filled, which can result in less realistic images. If the augmentations distort the original images too much, the network will be unable to classify images accurately, so we opted for more subtle transformations.
+
 ***Transfer Learning and Data Augmentation***
 
 **Results:**
