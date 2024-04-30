@@ -108,12 +108,22 @@ Minimal improvement from base model, but smoother training - the validation loss
 <img width="1102" alt="Screenshot 2024-04-30 at 8 12 56 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/c056469b-9a33-42db-8a16-26acd0ab1540">
 
 ***Transfer Learning and Data Augmentation*** -
+<img width="1166" alt="Screenshot 2024-04-30 at 8 23 49 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/51b9cbff-bc53-4dbe-bd81-dda6b8a233c7">
+The last epoch had a loss: 0.3901, accuracy: 0.8678, val_loss: 0.7899, and val_accuracy: 0.7192.
+Here's the Training History.
+<img width="608" alt="Screenshot 2024-04-30 at 8 23 58 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/528e1c8e-8793-4889-86ea-4b4ab4abcbd2">
+
+Here's the confusion matrix:
+
+<img width="729" alt="Screenshot 2024-04-30 at 8 53 16 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/110687817/e5cabf75-d7f5-43b1-9a22-095499f11c7d">
+
+
 
 **Conclusion**
+Out of all these models, we see that the transfer learning and data augmentation is the best result we got with a validation accuracy of 71%. 
 
 **Issues We Ran Into**
 - We only had 137 photos of trash, while other categories of recyclables are around 500 photos. To fix this discrepancy, we used data augmentation.
-- Transfer Learning took a while to run and the computer would often shut down. We managed to run all epochs, but there wasn't enough time to go back and implement strategies to stop overfitting.
 - Some diversity in the background of the images and more data in general would be the first step moving forward
   
 
