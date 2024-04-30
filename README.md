@@ -94,6 +94,7 @@ We can see that it often confuses paper with other things, especially plastic.
 
 
 ***Base Model with Data Augmentation*** -
+<img width="1102" alt="Screenshot 2024-04-30 at 8 12 56 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/c056469b-9a33-42db-8a16-26acd0ab1540">
 
 ***Transfer Learning and Data Augmentation*** -
 
@@ -102,6 +103,7 @@ We can see that it often confuses paper with other things, especially plastic.
 **Issues We Ran Into**
 - We only had 137 photos of trash, while other categories of recyclables are around 500 photos. To fix this discrepancy, we used data augmentation.
 - Transfer Learning took a while to run and the computer would often shut down. We managed to run all epochs, but there wasn't enough time to go back and implement strategies to stop overfitting.
+- Some diversity in the background and more data in general would be the first step moving forward
   
 
 
