@@ -103,7 +103,7 @@ We can see that it often confuses paper with other things, especially plastic.
 **Issues We Ran Into**
 - We only had 137 photos of trash, while other categories of recyclables are around 500 photos. To fix this discrepancy, we used data augmentation.
 - Transfer Learning took a while to run and the computer would often shut down. We managed to run all epochs, but there wasn't enough time to go back and implement strategies to stop overfitting.
-- Some diversity in the background and more data in general would be the first step moving forward
+- Some diversity in the background of the images and more data in general would be the first step moving forward
   
 
 
