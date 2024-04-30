@@ -94,6 +94,15 @@ We can see that it often confuses paper with other things, especially plastic.
 
 
 ***Base Model with Data Augmentation*** -
+
+Test loss: 1.2529,
+Test accuracy: 0.4970
+
+Minimal improvement from base model, but smoother training?
+
+<img width="508" alt="Screenshot 2024-04-30 at 8 19 49 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/8935d8b6-1fdb-47d1-8254-88356bf60534">
+<img width="561" alt="Screenshot 2024-04-30 at 8 20 10 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/795cb008-e697-49c6-83ca-8a9f6cbe4869">
+
 <img width="1102" alt="Screenshot 2024-04-30 at 8 12 56 AM" src="https://github.com/sgoffe/Garbage-Gang/assets/98913773/c056469b-9a33-42db-8a16-26acd0ab1540">
 
 ***Transfer Learning and Data Augmentation*** -
