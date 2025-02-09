@@ -1,4 +1,4 @@
-# Garbage Gang
+# Garbage Sort
 
 **Purpose of Project:**
 
